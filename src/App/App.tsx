@@ -16,9 +16,9 @@ const App = () => {
   }, [darkModeStatus]);
   return (
     <div className={themeClasses.container}>
-      {/* <div className={flexCenter}> */}
+      <div className={flexCenter}>
         <Wrapper />
-      {/* </div> */}
+      </div>
     </div>
   );
 }
