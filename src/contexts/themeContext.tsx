@@ -1,28 +1,14 @@
 // src/contexts/themeContext.tsx
-import {
-  createContext,
-  FC,
-  ReactNode,
-  useLayoutEffect,
-  useMemo,
-  useState,
-} from "react";
+import { createContext, FC, useLayoutEffect, useMemo, useState } from "react";
 import PropTypes from "prop-types";
-
-export interface IThemeContextProps {
-  darkModeStatus: boolean;
-  setDarkModeStatus: (
-    value: ((prevState: boolean) => boolean) | boolean
-  ) => void;
-}
+import {
+  IThemeContextProps,
+  IThemeContextProviderProps,
+} from "../interfaces/contexts/themeContext-interface";
 
 const ThemeContext = createContext<IThemeContextProps>(
   {} as IThemeContextProps
 );
-
-interface IThemeContextProviderProps {
-  children: ReactNode;
-}
 
 export const ThemeContextProvider: FC<IThemeContextProviderProps> = ({
   children,

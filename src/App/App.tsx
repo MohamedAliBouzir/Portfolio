@@ -1,7 +1,10 @@
 import { useEffect } from "react";
 import useDarkMode from "../hooks/useDarkMode";
-import { darkThemeClasses, lightThemeClasses, flexCenter, buttonCommons } from "./../styles/index";
-function App() {
+import { darkThemeClasses, lightThemeClasses, flexCenter } from "./../styles/index";
+import Wrapper from "../layout/Wrapper/Wrapper";
+
+
+const App = () => {
   const { themeStatus, darkModeStatus, setDarkModeStatus } = useDarkMode();
   const themeClasses = themeStatus === "dark" ? darkThemeClasses : lightThemeClasses;
   useEffect(() => {
@@ -13,14 +16,9 @@ function App() {
   }, [darkModeStatus]);
   return (
     <div className={themeClasses.container}>
-      <div className={flexCenter}>
-        <button
-          onClick={() => setDarkModeStatus(prev => !prev)}
-          className={`${buttonCommons} ${themeClasses.button}`}
-        >
-          Click Me
-        </button>
-      </div>
+      {/* <div className={flexCenter}> */}
+        <Wrapper />
+      {/* </div> */}
     </div>
   );
 }

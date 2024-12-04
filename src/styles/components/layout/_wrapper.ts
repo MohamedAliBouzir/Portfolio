@@ -1,0 +1,1 @@
+export const wrapper = "flex flex-1 flex-col"
