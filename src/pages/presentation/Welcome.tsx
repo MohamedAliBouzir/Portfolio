@@ -1,12 +1,15 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import useDarkMode from "../../hooks/useDarkMode";
 
 const Welcome = () => {
-  return (
-    <div>Welcome</div>
-  )
-}
+  const { setDarkModeStatus } = useDarkMode();
+  return <button
+  onClick={() => setDarkModeStatus((prev) => !prev)}
+  className="p-4 rounded-full bg-gray-700 text-white hover:bg-gray-600"
+>
+  Toggle Dark Mode
+</button>;
+};
 
-Welcome.propTypes = {}
+Welcome.propTypes = {};
 
-export default Welcome
+export default Welcome;
