@@ -1,0 +1,1 @@
+export const pageLayout = "flex flex-col flex-1 pt-4 sm:pt-6 md:pt-8 safari-specific"
