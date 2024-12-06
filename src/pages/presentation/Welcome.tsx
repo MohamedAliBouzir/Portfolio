@@ -1,3 +1,4 @@
+import Button from "../../components/tailwind/Button";
 import useDarkMode from "../../hooks/useDarkMode";
 import Page from "../../layout/Page";
 import PageWrapper from "../../layout/PageWrapper";
@@ -7,12 +8,11 @@ const Welcome = () => {
   return (
     <PageWrapper>
       <Page>
-        <button
-          onClick={() => setDarkModeStatus((prev) => !prev)}
-          className="p-4 rounded-full bg-gray-700 text-white hover:bg-gray-600"
-        >
-          Toggle Dark Mode
-        </button>
+        <div className="flex flex-row">
+        <Button onClick={() => setDarkModeStatus((prev) => !prev)}>
+          Switch Theme
+        </Button>
+        </div>
       </Page>
     </PageWrapper>
   );

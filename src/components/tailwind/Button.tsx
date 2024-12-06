@@ -2,7 +2,8 @@ import { forwardRef } from "react";
 import { IButtonProps } from "../../interfaces/components/button-interface";
 import classNames from "classnames";
 import TagWrapper from "../TagWrapper";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
+import { btn } from "../../styles/custom/_button";
 
 const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
   (
@@ -28,13 +29,13 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
     },
     ref
   ) => {
-    const BTN_CLASS = classNames("btn", className);
+    const BTN_CLASS = classNames(btn, className);
     const ANCHOR_LINK_PATTERN = /^#/i;
     const disableProps = isDisable && {
-        tabIndex: -1,
-        'aria-disabled': true,
-        disabled: true,
-    }
+      tabIndex: -1,
+      "aria-disabled": true,
+      disabled: true,
+    };
     const INNER = (
       <>
         {isVisuallyHidden ? (
@@ -65,30 +66,43 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
         </a>
       );
     }
-    return (<TagWrapper ref={ref} tag={tag} type={type} className={BTN_CLASS} {...disableProps} {...props}>{INNER}</TagWrapper>)
+    return (
+      <TagWrapper
+        ref={ref}
+        tag={tag}
+        type={type}
+        className={BTN_CLASS}
+        {...disableProps}
+        {...props}
+      >
+        {INNER}
+      </TagWrapper>
+    );
   }
 );
 
-Button.displayName = 'Button';
+Button.displayName = "Button";
 Button.propTypes = {
-    children: PropTypes.node,
-    tag: PropTypes.oneOf(['button', 'a', 'input', 'link']),
-    type: PropTypes.oneOf(['button', 'submit', 'reset']),
-    to: PropTypes.string,
-    href: PropTypes.string,
-    isActive: PropTypes.bool,
-    color: PropTypes.string,
-    isOutline: PropTypes.bool,
-    isLight: PropTypes.bool,
-    isLink: PropTypes.bool,
-    className: PropTypes.string,
-    size: PropTypes.oneOf(['sm', 'lg', null]),
-    isDisable: PropTypes.bool,
-    shadow: PropTypes.oneOf([null, 'none', 'sm', 'default', 'lg']),
-    hoverShadow: PropTypes.oneOf([null, 'none', 'sm', 'default', 'lg']),
-    target: PropTypes.oneOfType([
-        PropTypes.oneOf(['_blank', '_self', '_parent', '_top']),
-        PropTypes.string,
-    ]),
-    isVisuallyHidden: PropTypes.bool,
-}
+  children: PropTypes.node,
+  tag: PropTypes.oneOf(["button", "a", "input", "link"]),
+  type: PropTypes.oneOf(["button", "submit", "reset"]),
+  to: PropTypes.string,
+  href: PropTypes.string,
+  isActive: PropTypes.bool,
+  color: PropTypes.string,
+  isOutline: PropTypes.bool,
+  isLight: PropTypes.bool,
+  isLink: PropTypes.bool,
+  className: PropTypes.string,
+  size: PropTypes.oneOf(["sm", "lg", null]),
+  isDisable: PropTypes.bool,
+  shadow: PropTypes.oneOf([null, "none", "sm", "default", "lg"]),
+  hoverShadow: PropTypes.oneOf([null, "none", "sm", "default", "lg"]),
+  target: PropTypes.oneOfType([
+    PropTypes.oneOf(["_blank", "_self", "_parent", "_top"]),
+    PropTypes.string,
+  ]),
+  isVisuallyHidden: PropTypes.bool,
+};
+
+export default Button;

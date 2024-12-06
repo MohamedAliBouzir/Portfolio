@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import App from "./App/App.tsx";
 import "./styles/general.css";
 import { ThemeContextProvider } from "./contexts/themeContext.tsx";
+import "tw-elements-react/dist/css/tw-elements-react.min.css";
 
 const children = (
   <ThemeContextProvider>
