@@ -30,9 +30,10 @@ export interface IButtonProps
   className?: string;
   size?: "sm" | "lg" | null;
   isDisable?: boolean;
-  shadow?: null | "none" | "sm" | "default" | "lg";
+  shadow?: boolean;
   hoverShadow?: null | "none" | "sm" | "default" | "lg";
   target?: HTMLAttributeAnchorTarget;
   isVisuallyHidden?: boolean;
+  rounded?: "default" | 0 | 1 | 2 | 3 | null;
   onClick?(...args: unknown[]): unknown;
 }

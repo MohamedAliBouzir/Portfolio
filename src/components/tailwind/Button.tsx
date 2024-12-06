@@ -3,7 +3,7 @@ import { IButtonProps } from "../../interfaces/components/button-interface";
 import classNames from "classnames";
 import TagWrapper from "../TagWrapper";
 import PropTypes, { string } from "prop-types";
-import { btn } from "../../styles/custom/_button";
+import { btn, hoverDesign, shadowDesign } from "../../styles/custom/_button";
 
 const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
   (
@@ -21,9 +21,10 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
       className = undefined,
       size = null,
       isDisable = false,
-      shadow = null,
+      shadow = undefined,
       hoverShadow = null,
       target = undefined,
+      rounded = null,
       isVisuallyHidden = false,
       ...props
     },
@@ -32,7 +33,9 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
     const BTN_CLASS = classNames(
       btn,
       className,
-      typeof color === "string" && `bg-${color} text-white`
+      typeof color === "string" &&
+        `bg-${color} ${hoverDesign(color)} ${color === "secondary" ? "text-black" : "text-white"}`,
+      shadow && typeof color === "string" && `${shadowDesign(color)}`
     );
     const ANCHOR_LINK_PATTERN = /^#/i;
     const disableProps = isDisable && {
@@ -108,13 +111,14 @@ Button.propTypes = {
   className: PropTypes.string,
   size: PropTypes.oneOf(["sm", "lg", null]),
   isDisable: PropTypes.bool,
-  shadow: PropTypes.oneOf([null, "none", "sm", "default", "lg"]),
+  shadow: PropTypes.bool,
   hoverShadow: PropTypes.oneOf([null, "none", "sm", "default", "lg"]),
   target: PropTypes.oneOfType([
     PropTypes.oneOf(["_blank", "_self", "_parent", "_top"]),
     PropTypes.string,
   ]),
   isVisuallyHidden: PropTypes.bool,
+  rounded: PropTypes.oneOf(["default", 0, 1, 2, 3]),
 };
 
 export default Button;
