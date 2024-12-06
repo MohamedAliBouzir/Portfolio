@@ -10,7 +10,7 @@ import Wrapper from "../layout/Wrapper/Wrapper";
 import classNames from "classnames";
 
 const App = () => {
-  const { themeStatus, darkModeStatus, setDarkModeStatus } = useDarkMode();
+  const { themeStatus, darkModeStatus } = useDarkMode();
   const themeClasses =
     themeStatus === "dark" ? darkThemeClasses : lightThemeClasses;
 
