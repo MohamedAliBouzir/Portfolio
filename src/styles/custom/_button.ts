@@ -21,8 +21,25 @@ export const shadowDesign = (color: string) => {
 export const hoverDesign = (color: string) => {
   switch (color) {
     case "secondary":
-      return "hover:bg-neutral-100";
+      return "hover:bg-primary-accent-100";
     default:
       return `hover:bg-${color}-600`;
   }
 };
+
+export const focusDesign = (color: string) => {
+    switch(color) {
+        case "primary":
+            return "active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]";
+        case "secondary":
+            return "active:bg-primary-accent-200 active:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)] ";
+        case "success":
+            return "active:bg-success-700 active:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)]";
+        case "info":
+            return "active:bg-info-700 active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)]";
+        case "warning":
+            return "active:bg-warning-700 active:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)]";
+        case "danger":
+            return "active:bg-danger-700 active:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)]";
+    }
+}

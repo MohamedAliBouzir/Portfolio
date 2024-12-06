@@ -8,15 +8,14 @@ const Welcome = () => {
   return (
     <PageWrapper>
       <Page>
-        <div className="flex flex-row">
           <Button
-            color="primary"
+            color="success"
             shadow
+            rounded="lg"
             onClick={() => setDarkModeStatus((prev) => !prev)}
           >
             Switch Theme
           </Button>
-        </div>
       </Page>
     </PageWrapper>
   );

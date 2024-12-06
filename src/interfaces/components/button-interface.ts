@@ -34,6 +34,6 @@ export interface IButtonProps
   hoverShadow?: null | "none" | "sm" | "default" | "lg";
   target?: HTMLAttributeAnchorTarget;
   isVisuallyHidden?: boolean;
-  rounded?: "default" | 0 | 1 | 2 | 3 | null;
+  rounded?: "default" | "sm" | "lg" | "full";
   onClick?(...args: unknown[]): unknown;
 }

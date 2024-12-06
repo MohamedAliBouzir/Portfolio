@@ -3,7 +3,7 @@ import { IButtonProps } from "../../interfaces/components/button-interface";
 import classNames from "classnames";
 import TagWrapper from "../TagWrapper";
 import PropTypes, { string } from "prop-types";
-import { btn, hoverDesign, shadowDesign } from "../../styles/custom/_button";
+import { btn, focusDesign, hoverDesign, shadowDesign } from "../../styles/custom/_button";
 
 const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
   (
@@ -34,8 +34,9 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
       btn,
       className,
       typeof color === "string" &&
-        `bg-${color} ${hoverDesign(color)} ${color === "secondary" ? "text-black" : "text-white"}`,
-      shadow && typeof color === "string" && `${shadowDesign(color)}`
+        `bg-${color} ${hoverDesign(color)} ${focusDesign(color)} ${color === "secondary" ? "text-black" : "text-white"}`,
+      shadow && typeof color === "string" && `${shadowDesign(color)}`,
+      typeof rounded === 'string' ? "rounded" : `rounded-${rounded}`
     );
     const ANCHOR_LINK_PATTERN = /^#/i;
     const disableProps = isDisable && {
@@ -118,7 +119,7 @@ Button.propTypes = {
     PropTypes.string,
   ]),
   isVisuallyHidden: PropTypes.bool,
-  rounded: PropTypes.oneOf(["default", 0, 1, 2, 3]),
+  rounded: PropTypes.oneOf(["default", "sm", "lg", "full"]),
 };
 
 export default Button;
