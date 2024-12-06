@@ -2,7 +2,7 @@ import { forwardRef } from "react";
 import { IButtonProps } from "../../interfaces/components/button-interface";
 import classNames from "classnames";
 import TagWrapper from "../TagWrapper";
-import PropTypes from "prop-types";
+import PropTypes, { string } from "prop-types";
 import { btn } from "../../styles/custom/_button";
 
 const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
@@ -29,7 +29,11 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
     },
     ref
   ) => {
-    const BTN_CLASS = classNames(btn, className);
+    const BTN_CLASS = classNames(
+      btn,
+      className,
+      typeof color === "string" && `bg-${color} text-white`
+    );
     const ANCHOR_LINK_PATTERN = /^#/i;
     const disableProps = isDisable && {
       tabIndex: -1,
@@ -89,7 +93,15 @@ Button.propTypes = {
   to: PropTypes.string,
   href: PropTypes.string,
   isActive: PropTypes.bool,
-  color: PropTypes.string,
+  color: PropTypes.oneOf([
+    null,
+    "primary",
+    "secondary",
+    "success",
+    "info",
+    "warning",
+    "danger",
+  ]),
   isOutline: PropTypes.bool,
   isLight: PropTypes.bool,
   isLink: PropTypes.bool,

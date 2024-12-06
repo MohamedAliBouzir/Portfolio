@@ -4,6 +4,7 @@ import {
   ReactElement,
   ReactNode,
 } from "react";
+import { TColor } from "../../types/custom/color-type";
 
 export interface IButtonGroupProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactElement<IButtonProps>[] | JSX.Element | JSX.Element[];
@@ -22,7 +23,7 @@ export interface IButtonProps
   to?: string | undefined;
   href?: string | undefined;
   isActive?: boolean;
-  color?: string | undefined;
+  color?: TColor | undefined;
   isOutline?: boolean;
   isLight?: boolean;
   isLink?: boolean;
