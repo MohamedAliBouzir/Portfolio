@@ -22,16 +22,14 @@ export interface IButtonProps
   type?: "button" | "submit" | "reset";
   to?: string | undefined;
   href?: string | undefined;
-  isActive?: boolean;
   color?: TColor | undefined;
-  isOutline?: boolean;
   isLight?: boolean;
   isLink?: boolean;
   className?: string;
   size?: "sm" | "lg" | null;
   isDisable?: boolean;
   shadow?: boolean;
-  hoverShadow?: null | "none" | "sm" | "default" | "lg";
+  hoverShadow?: boolean;
   target?: HTMLAttributeAnchorTarget;
   isVisuallyHidden?: boolean;
   rounded?: "default" | "sm" | "lg" | "full";

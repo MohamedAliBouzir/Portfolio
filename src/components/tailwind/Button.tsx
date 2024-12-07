@@ -2,31 +2,29 @@ import { forwardRef } from "react";
 import { IButtonProps } from "../../interfaces/components/button-interface";
 import classNames from "classnames";
 import TagWrapper from "../TagWrapper";
-import PropTypes, { string } from "prop-types";
-import { btn, focusDesign, hoverDesign, shadowDesign } from "../../styles/custom/_button";
+import PropTypes from "prop-types";
+import { btn, focusDesign, hoverDesign, hovershadowDesign, shadowDesign } from "../../styles/custom/_button";
 
 const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
   (
     {
-      children = null,
-      tag = "button",
-      type = "button",
+      children = null,//done
+      tag = "button",//done
+      type = "button",//done
       to = undefined,
-      href = undefined,
-      isActive = false,
-      color = undefined,
-      isOutline = false,
+      href = undefined,//done
+      color = undefined, //done
       isLight = false,
       isLink = false,
-      className = undefined,
-      size = null,
-      isDisable = false,
-      shadow = undefined,
-      hoverShadow = null,
-      target = undefined,
-      rounded = null,
-      isVisuallyHidden = false,
-      ...props
+      className = undefined, //done
+      size = null, //done
+      isDisable = false, //done
+      shadow = undefined, //done
+      hoverShadow = null, //done
+      target = undefined, //done
+      rounded = null,//done
+      isVisuallyHidden = false,//done
+      ...props//done
     },
     ref
   ) => {
@@ -36,7 +34,9 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
       typeof color === "string" &&
         `bg-${color} ${hoverDesign(color)} ${focusDesign(color)} ${color === "secondary" ? "text-black" : "text-white"}`,
       shadow && typeof color === "string" && `${shadowDesign(color)}`,
-      typeof rounded === 'string' ? "rounded" : `rounded-${rounded}`
+      typeof rounded === 'string' ? "rounded" : `rounded-${rounded}`,
+      hoverShadow && typeof color === "string" && hovershadowDesign(color),
+      isDisable && "cursor-not-allowed",
     );
     const ANCHOR_LINK_PATTERN = /^#/i;
     const disableProps = isDisable && {
@@ -96,7 +96,6 @@ Button.propTypes = {
   type: PropTypes.oneOf(["button", "submit", "reset"]),
   to: PropTypes.string,
   href: PropTypes.string,
-  isActive: PropTypes.bool,
   color: PropTypes.oneOf([
     null,
     "primary",
@@ -106,14 +105,13 @@ Button.propTypes = {
     "warning",
     "danger",
   ]),
-  isOutline: PropTypes.bool,
   isLight: PropTypes.bool,
   isLink: PropTypes.bool,
   className: PropTypes.string,
   size: PropTypes.oneOf(["sm", "lg", null]),
   isDisable: PropTypes.bool,
   shadow: PropTypes.bool,
-  hoverShadow: PropTypes.oneOf([null, "none", "sm", "default", "lg"]),
+  hoverShadow: PropTypes.bool,
   target: PropTypes.oneOfType([
     PropTypes.oneOf(["_blank", "_self", "_parent", "_top"]),
     PropTypes.string,

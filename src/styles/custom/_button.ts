@@ -4,17 +4,34 @@ export const btn =
 export const shadowDesign = (color: string) => {
   switch (color) {
     case "primary":
-      return "shadow-[0_4px_9px_-4px_#3b71ca] hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]";
+      return "shadow-[0_4px_9px_-4px_#3b71ca]";
     case "secondary":
-      return "shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)] hover:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)]";
+      return "shadow-[0_4px_9px_-4px_rgba(51,45,45,0.7)]";
     case "success":
-      return "shadow-[0_4px_9px_-4px_#14a44d] hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)]";
+      return "shadow-[0_4px_9px_-4px_#14a44d]";
     case "info":
-      return "shadow-[0_4px_9px_-4px_#54b4d3] hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)]";
+      return "shadow-[0_4px_9px_-4px_#54b4d3]";
     case "warning":
-      return "shadow-[0_4px_9px_-4px_#e4a11b] hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)]";
+      return "shadow-[0_4px_9px_-4px_#e4a11b]";
     case "danger":
-      return "shadow-[0_4px_9px_-4px_#dc4c64] hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)]";
+      return "shadow-[0_4px_9px_-4px_#dc4c64]";
+  }
+};
+
+export const hovershadowDesign = (color: string) => {
+  switch (color) {
+    case "primary":
+      return "hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)]";
+    case "secondary":
+      return "hover:shadow-[0_8px_9px_-4px_rgba(203,203,203,0.3),0_4px_18px_0_rgba(203,203,203,0.2)]";
+    case "success":
+      return "hover:shadow-[0_8px_9px_-4px_rgba(20,164,77,0.3),0_4px_18px_0_rgba(20,164,77,0.2)]";
+    case "info":
+      return "hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)]";
+    case "warning":
+      return "hover:shadow-[0_8px_9px_-4px_rgba(228,161,27,0.3),0_4px_18px_0_rgba(228,161,27,0.2)]";
+    case "danger":
+      return "hover:shadow-[0_8px_9px_-4px_rgba(220,76,100,0.3),0_4px_18px_0_rgba(220,76,100,0.2)]";
   }
 };
 
