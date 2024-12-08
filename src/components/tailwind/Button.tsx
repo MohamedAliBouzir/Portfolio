@@ -3,40 +3,54 @@ import { IButtonProps } from "../../interfaces/components/button-interface";
 import classNames from "classnames";
 import TagWrapper from "../TagWrapper";
 import PropTypes from "prop-types";
-import { btn, focusDesign, hoverDesign, hovershadowDesign, shadowDesign } from "../../styles/custom/_button";
+import {
+  btn,
+  focusDesign,
+  hoverDesign,
+  hovershadowDesign,
+  shadowDesign,
+} from "../../styles/custom/_button";
+import { Link } from "react-router-dom";
 
 const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
   (
     {
-      children = null,//done
-      tag = "button",//done
-      type = "button",//done
+      children = null, 
+      tag = "button", 
+      type = "button", 
       to = undefined,
-      href = undefined,//done
-      color = undefined, //done
-      isLight = false,//done
-      isLink = false,
-      className = undefined, //done
-      size = null, //done
-      isDisable = false, //done
-      shadow = undefined, //done
-      hoverShadow = null, //done
-      target = undefined, //done
-      rounded = null,//done
-      isVisuallyHidden = false,//done
-      ...props//done
+      href = undefined, 
+      color = undefined, 
+      isLight = false, 
+      isLink = false, 
+      className = undefined, 
+      size = null, 
+      isDisable = false, 
+      shadow = undefined,
+      hoverShadow = null,
+      target = undefined,
+      rounded = null, 
+      isVisuallyHidden = false, 
+      ...props 
     },
     ref
   ) => {
     const BTN_CLASS = classNames(
       btn,
       className,
-      typeof color === "string" && `${hoverDesign(color, isLight)} ${focusDesign(color)}`,
-      shadow && typeof color === "string" && `${shadowDesign(color)}`,
-      typeof rounded !== 'string' ? "rounded" : `rounded-${rounded}`,
+      typeof color === "string" &&
+        (isLink
+          ? `text-${color} hover:text-${color}-600 active:text-${color}-700`
+          : `${hoverDesign(color, isLight)} ${focusDesign(color)}`),
+      shadow &&
+        typeof color === "string" &&
+        !isLink &&
+        `${shadowDesign(color)}`,
+      typeof rounded !== "string" ? "rounded" : `rounded-${rounded}`,
       hoverShadow && typeof color === "string" && hovershadowDesign(color),
-      isDisable && "cursor-not-allowed",
+      isDisable && "cursor-not-allowed"
     );
+
     const ANCHOR_LINK_PATTERN = /^#/i;
     const disableProps = isDisable && {
       tabIndex: -1,
@@ -53,11 +67,20 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
       </>
     );
     if (tag === "a") {
-      if (typeof to === "string" && ANCHOR_LINK_PATTERN.test(to)) {
-        return <div>{INNER}</div>;
-      }
       if (to) {
-        return <div>{INNER}</div>;
+        return (
+          <Link
+            className={BTN_CLASS}
+            to={to}
+            target={target}
+            rel="noopener"
+            ref={ref}
+            {...props}
+            {...disableProps}
+          >
+            {INNER}
+          </Link>
+        );
       }
       return (
         <a
