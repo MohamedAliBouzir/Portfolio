@@ -35,19 +35,19 @@ export const hovershadowDesign = (color: string) => {
   }
 };
 
-export const hoverDesign = (color: string, isLight: boolean) => {
+export const hoverDesign = (color: string, isLight: boolean, isActive:boolean) => {
   switch (color) {
     case "secondary":
       if (isLight) {
-        return `border-${color} border-2 text-${color} hover:border-primary-accent-100 hover:text-primary-accent-100 active:border-primary-accent-200 active:text-primary-accent-200`;
+        return isActive ? `border-primary-accent-200 border-2 text-primary-accent-200 hover:border-primary-accent-100 hover:text-primary-accent-100 active:border-primary-accent-200 active:text-primary-accent-200` :  `border-${color} border-2 text-${color} hover:border-primary-accent-100 hover:text-primary-accent-100 active:border-primary-accent-200 active:text-primary-accent-200`;
       } else {
-        return "bg-secondary hover:bg-primary-accent-100 active:bg-primary-accent-200 text-black";
+        return isActive ? `bg-primary-accent-200 hover:bg-primary-accent-100 active:bg-primary-accent-200 text-black` : "bg-secondary hover:bg-primary-accent-100 active:bg-primary-accent-200 text-black";
       }
     default:
       if (isLight) {
-        return `border-${color} border-2 text-${color} hover:border-${color}-600 hover:text-${color}-600 active:border-${color}-700 active:text-${color}-700`;
+        return isActive ? `border-${color}-700 border-2 text-${color}-700 hover:border-${color}-600 hover:text-${color}-600 active:border-${color}-700 active:text-${color}-700` : `border-${color} border-2 text-${color} hover:border-${color}-600 hover:text-${color}-600 active:border-${color}-700 active:text-${color}-700`;
       } else {
-        return `bg-${color} hover:bg-${color}-600 active:bg-${color}-700 text-white`;
+        return isActive ? `bg-${color}-700 hover:bg-${color}-600 active:bg-${color}-700 text-white` : `bg-${color} hover:bg-${color}-600 active:bg-${color}-700 text-white`;
       }
   }
 };

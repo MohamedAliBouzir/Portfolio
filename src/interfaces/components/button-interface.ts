@@ -25,6 +25,7 @@ export interface IButtonProps
   color?: TColor | undefined;
   isLight?: boolean;
   isLink?: boolean;
+  isActive?: boolean;
   className?: string;
   size?: "sm" | "lg" | null;
   isDisable?: boolean;

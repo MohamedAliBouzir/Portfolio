@@ -23,6 +23,7 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
       color = undefined, 
       isLight = false, 
       isLink = false, 
+      isActive = false,
       className = undefined, 
       size = null, 
       isDisable = false, 
@@ -41,7 +42,7 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
       typeof color === "string" &&
         (isLink
           ? `text-${color} hover:text-${color}-600 active:text-${color}-700`
-          : `${hoverDesign(color, isLight)} ${focusDesign(color)}`),
+          : `${hoverDesign(color, isLight, isActive)} ${focusDesign(color)}`),
       shadow &&
         typeof color === "string" &&
         !isLink &&
@@ -129,6 +130,7 @@ Button.propTypes = {
   ]),
   isLight: PropTypes.bool,
   isLink: PropTypes.bool,
+  isActive: PropTypes.bool,
   className: PropTypes.string,
   size: PropTypes.oneOf(["sm", "lg", null]),
   isDisable: PropTypes.bool,
