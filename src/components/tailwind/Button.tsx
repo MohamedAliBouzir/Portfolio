@@ -14,7 +14,7 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
       to = undefined,
       href = undefined,//done
       color = undefined, //done
-      isLight = false,
+      isLight = false,//done
       isLink = false,
       className = undefined, //done
       size = null, //done
@@ -31,10 +31,9 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
     const BTN_CLASS = classNames(
       btn,
       className,
-      typeof color === "string" &&
-        `bg-${color} ${hoverDesign(color)} ${focusDesign(color)} ${color === "secondary" ? "text-black" : "text-white"}`,
+      typeof color === "string" && `${hoverDesign(color, isLight)} ${focusDesign(color)}`,
       shadow && typeof color === "string" && `${shadowDesign(color)}`,
-      typeof rounded === 'string' ? "rounded" : `rounded-${rounded}`,
+      typeof rounded !== 'string' ? "rounded" : `rounded-${rounded}`,
       hoverShadow && typeof color === "string" && hovershadowDesign(color),
       isDisable && "cursor-not-allowed",
     );

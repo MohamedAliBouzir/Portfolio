@@ -11,7 +11,8 @@ const Welcome = () => {
           <Button
             color="success"
             shadow
-            rounded="lg"
+            rounded="full"
+            isLight
             onClick={() => setDarkModeStatus((prev) => !prev)}
           >
             Switch Theme
