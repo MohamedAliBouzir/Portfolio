@@ -1,8 +1,18 @@
-import React from "react";
-import PropTypes from "prop-types";
+import { useMeasure } from "react-use";
+// import Button from "../../components/tailwind/Button";
+// import useDarkMode from "../../hooks/useDarkMode";
+import Page from "../../layout/Page";
+import PageWrapper from "../../layout/PageWrapper";
+import { PortfolioHome } from "../../menu";
 
 const Contact = () => {
-  return <div>Contact</div>;
+  // const { setDarkModeStatus } = useDarkMode();
+  const [ref] = useMeasure<HTMLDivElement>();
+  return (
+    <PageWrapper ref={ref} title={PortfolioHome.ContactPage.text}>
+      <Page>Contact page</Page>
+    </PageWrapper>
+  );
 };
 
 Contact.propTypes = {};

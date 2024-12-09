@@ -3,27 +3,18 @@ import { useMeasure } from "react-use";
 // import useDarkMode from "../../hooks/useDarkMode";
 import Page from "../../layout/Page";
 import PageWrapper from "../../layout/PageWrapper";
+import { PortfolioHome } from "../../menu";
 
-const Welcome = () => {
+const Home = () => {
   // const { setDarkModeStatus } = useDarkMode();
   const [ref] = useMeasure<HTMLDivElement>();
   return (
-    <PageWrapper ref={ref} title="Home">
-      <Page>
-          {/* <Button
-            color="info"
-            shadow
-            rounded="lg"
-            onClick={() => setDarkModeStatus((prev) => !prev)}
-          >
-            Switch Theme
-          </Button> */}
-        Welcome page
-      </Page>
+    <PageWrapper ref={ref} title={PortfolioHome.welcomePage.text}>
+      <Page>Welcome page</Page>
     </PageWrapper>
   );
 };
 
-Welcome.propTypes = {};
+Home.propTypes = {};
 
-export default Welcome;
+export default Home;

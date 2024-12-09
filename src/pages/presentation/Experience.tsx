@@ -1,12 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import { useMeasure } from "react-use";
+// import Button from "../../components/tailwind/Button";
+// import useDarkMode from "../../hooks/useDarkMode";
+import Page from "../../layout/Page";
+import PageWrapper from "../../layout/PageWrapper";
+import { PortfolioHome } from "../../menu";
 
 const Experience = () => {
+  // const { setDarkModeStatus } = useDarkMode();
+  const [ref] = useMeasure<HTMLDivElement>();
   return (
-    <div>Experience</div>
-  )
-}
+    <PageWrapper ref={ref} title={PortfolioHome.ExperiencePage.text}>
+      <Page>Welcome page</Page>
+    </PageWrapper>
+  );
+};
 
-Experience.propTypes = {}
+Experience.propTypes = {};
 
-export default Experience
+export default Experience;
