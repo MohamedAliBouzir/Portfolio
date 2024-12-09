@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Button from "../../../components/tailwind/Button";
 import Header from "../../../layout/Header/Header";
 import { PortfolioHome } from "../../../menu";
@@ -10,9 +11,10 @@ const ProfileHeader = () => {
         <div className="flex-1 text-left">Web Site Logo</div>
 
         {/* Second child: flex-1 */}
-        <div className="flex-1 flex justify-center">
-          {Object.entries(PortfolioHome).map(([key, value]) => (
-            <Button isLink>{value.text}</Button>
+        <div className="flex-1 flex justify-center gap-1">
+          {Object.values(PortfolioHome).map((value) => (
+            // <Button isLink>{value.text}</Button>
+            <NavLink id={value.id} to={`${value.path}`}>{value.text}</NavLink>
           ))}
         </div>
 

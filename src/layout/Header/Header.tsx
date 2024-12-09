@@ -9,7 +9,7 @@ const Header: FC<IHeaderProps> = ({ children, className = undefined }) => {
   const root = document.documentElement;
   root.style.setProperty("--header-height", `${sizeHeader.height}px`);
   return (
-    <header ref={refHeader} className={classNames(`bg-transparent h-[var(${sizeHeader.height}px)]`, className)}>
+    <header ref={refHeader} className={classNames(`w-full bg-gradient-to-tr from-primary to-transparent h-[var(${sizeHeader.height}px)]`, className)}>
       <div className="container-fluid">
         <div className="flex flex-row items-center justify-between">{children}</div>
       </div>

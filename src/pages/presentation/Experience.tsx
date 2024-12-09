@@ -10,7 +10,7 @@ const Experience = () => {
   const [ref] = useMeasure<HTMLDivElement>();
   return (
     <PageWrapper ref={ref} title={PortfolioHome.ExperiencePage.text}>
-      <Page>Welcome page</Page>
+      <Page>Experience page</Page>
     </PageWrapper>
   );
 };
