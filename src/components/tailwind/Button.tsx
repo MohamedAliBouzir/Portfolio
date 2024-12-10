@@ -11,28 +11,30 @@ import {
   shadowDesign,
 } from "../../styles/custom/_button";
 import { Link } from "react-router-dom";
+import Icon from "../icon/Icon";
 
 const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
   (
     {
-      children = null, 
-      tag = "button", 
-      type = "button", 
+      children = null,
+      tag = "button",
+      type = "button",
       to = undefined,
-      href = undefined, 
-      color = undefined, 
-      isLight = false, 
-      isLink = false, 
+      href = undefined,
+      color = undefined,
+      isLight = false,
+      isLink = false,
       isActive = false,
-      className = undefined, 
-      size = null, 
-      isDisable = false, 
+      className = undefined,
+      icon = undefined,
+      size = null,
+      isDisable = false,
       shadow = undefined,
       hoverShadow = null,
       target = undefined,
-      rounded = null, 
-      isVisuallyHidden = false, 
-      ...props 
+      rounded = null,
+      isVisuallyHidden = false,
+      ...props
     },
     ref
   ) => {
@@ -52,7 +54,6 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
       isDisable && "cursor-not-allowed"
     );
 
-    const ANCHOR_LINK_PATTERN = /^#/i;
     const disableProps = isDisable && {
       tabIndex: -1,
       "aria-disabled": true,
@@ -60,6 +61,19 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
     };
     const INNER = (
       <>
+        {icon && (
+          <Icon
+            icon={icon}
+            className="w-[calc(var(--btn-font-size)*1px)] 
+                       h-[calc(var(--btn-font-size)*1px)] 
+                       mt-[-2px] 
+                       mr-2 
+                       sm:w-[calc(var(--btn-font-size-sm)*1px)] 
+                       sm:h-[calc(var(--btn-font-size-sm)*1px)] 
+                       lg:w-[calc(var(--btn-font-size-lg)*1px)] 
+                       lg:h-[calc(var(--btn-font-size-lg)*1px)]"
+          />
+        )}
         {isVisuallyHidden ? (
           <span className="visually-hidden">Toggle Dropdown</span>
         ) : (
@@ -132,6 +146,7 @@ Button.propTypes = {
   isLink: PropTypes.bool,
   isActive: PropTypes.bool,
   className: PropTypes.string,
+  icon: PropTypes.string,
   size: PropTypes.oneOf(["sm", "lg", null]),
   isDisable: PropTypes.bool,
   shadow: PropTypes.bool,
