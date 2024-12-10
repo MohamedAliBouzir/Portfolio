@@ -28,15 +28,32 @@ const RefWrapper = forwardRef<HTMLSpanElement, IRefWrapperProps>(
 RefWrapper.displayName = "RefWrapper";
 
 const Icon = forwardRef<HTMLSpanElement, IIconProps>(
-  ({ icon, className, color, size, forceFamily, ...props }, ref) => {
+  (
+    {
+      icon,
+      className = undefined,
+      color = undefined,
+      size = null,
+      forceFamily = null,
+      ...props
+    },
+    ref
+  ) => {
     const IconName = pascalcase(icon);
     const SvgIconWrapper = SvgIcons[IconName];
     const HeroWrapper = HeroIcons[IconName];
-    const ClassName = classNames(
-      "svg-icon",
-      { [`svg-icon-${size}`]: size, [`text-${color}`]: color },
-      className
+
+    // Construct Tailwind-based classNames
+    const iconClassName = classNames(
+      "inline-block", // Ensure the icon is inline (important for spacing in text)
+      {
+        [`text-${color}`]: color, // Dynamic text color based on 'color' prop
+        [`w-${size}`]: size, // Dynamic width based on 'size' prop
+        [`h-${size}`]: size, // Dynamic height based on 'size' prop
+      },
+      className // Append any additional className from props
     );
+
     const isForceCustom = forceFamily === "custom";
     const isForceHero = forceFamily === "hero";
 
@@ -48,26 +65,29 @@ const Icon = forwardRef<HTMLSpanElement, IIconProps>(
         <RefWrapper ref={ref}>
           <SvgIconWrapper
             data-name={`SvgIcon--${IconName}`}
-            className={classNames("svg-icon--custom", ClassName)}
+            className={classNames("svg-icon--custom", iconClassName)}
             {...props}
           />
         </RefWrapper>
       );
     }
+
     if (isForceHero || (!isForceCustom && typeof HeroWrapper === "function")) {
       return (
         <RefWrapper ref={ref}>
           <HeroWrapper
             data-name={`hero--${icon}`}
-            className={classNames("svg-icon--material", ClassName)}
+            className={classNames("svg-icon--hero", iconClassName)}
             {...props}
           />
         </RefWrapper>
       );
     }
+
     return null;
   }
 );
+
 Icon.propTypes = {
   icon: PropTypes.string.isRequired,
   className: PropTypes.string,
@@ -97,12 +117,7 @@ Icon.propTypes = {
   ]),
   forceFamily: PropTypes.oneOf([null, "custom", "hero"]),
 };
-Icon.defaultProps = {
-  className: undefined,
-  color: undefined,
-  size: null,
-  forceFamily: null,
-};
+
 Icon.displayName = "Icon";
 
 export default memo(Icon);
