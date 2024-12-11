@@ -11,14 +11,14 @@ const ProfileHeader = () => {
     <Header>
       <div className="flex flex-row items-center justify-around w-full mx-2">
         <div>
-          <NavLink id="Home" to="/"><Button icon="logo" iconSize="10"/></NavLink>
+          <NavLink id="Home" to="/">
+            <Icon icon="logo" size="10" />
+          </NavLink>
         </div>
         <div className="flex justify-center gap-5">
           {Object.values(PortfolioHome).map((value) => (
             <NavLink id={value.id} to={`${value.path}`}>
-              <Button hoverShadow>
-                {value.text}
-              </Button>
+              <Button hoverShadow>{value.text}</Button>
             </NavLink>
           ))}
         </div>
