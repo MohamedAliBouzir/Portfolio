@@ -5,7 +5,7 @@ import {
   ReactNode,
 } from "react";
 import { TColor } from "../../types/custom/color-type";
-import { TIcons } from "../../types/components/icons-type";
+import { TIcons, TIconsSize } from "../../types/components/icons-type";
 
 export interface IButtonGroupProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactElement<IButtonProps>[] | JSX.Element | JSX.Element[];
@@ -29,6 +29,7 @@ export interface IButtonProps
   isActive?: boolean;
   className?: string;
   icon?: TIcons;
+  iconSize?: TIconsSize;
   size?: "sm" | "lg" | null;
   isDisable?: boolean;
   shadow?: boolean;

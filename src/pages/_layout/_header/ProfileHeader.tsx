@@ -5,26 +5,34 @@ import { PortfolioHome } from "../../../menu";
 import useDarkMode from "../../../hooks/useDarkMode";
 import Icon from "../../../components/icon/Icon";
 
-
 const ProfileHeader = () => {
   const { setDarkModeStatus, darkModeStatus } = useDarkMode();
   return (
     <Header>
-      <div className="flex flex-row items-center justify-between w-full mx-2">
-        {/* First child: flex-1 */}
-        <div className="flex-1 text-left"><Icon icon="logo" /></div>
-
-        {/* Second child: flex-1 */}
-        <div className="flex-1 flex justify-center gap-1">
+      <div className="flex flex-row items-center justify-around w-full mx-2">
+        <div>
+          <NavLink id="Home" to="/"><Button icon="logo" iconSize="10"/></NavLink>
+        </div>
+        <div className="flex justify-center gap-5">
           {Object.values(PortfolioHome).map((value) => (
-            // <Button isLink>{value.text}</Button>
-            <NavLink id={value.id} to={`${value.path}`}>{value.text}</NavLink>
+            <NavLink id={value.id} to={`${value.path}`}>
+              <Button hoverShadow>
+                {value.text}
+              </Button>
+            </NavLink>
           ))}
         </div>
-
-        {/* Third child: flex-1 */}
-        <div className="flex-1 flex justify-end space-x-2">
-          <Button icon={!darkModeStatus ? "Moon" : "Sun"} onClick={() => setDarkModeStatus((prev) => !prev)}/>
+        <div className="flex  space-x-2">
+          <Button
+            type="button"
+            isLink
+            hoverShadow
+            color="secondary"
+            size="sm"
+            rounded="lg"
+            icon={!darkModeStatus ? "Moon" : "Sun"}
+            onClick={() => setDarkModeStatus((prev) => !prev)}
+          />
         </div>
       </div>
     </Header>

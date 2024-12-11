@@ -5,15 +5,17 @@ export type TIcons = string | TSvgIcons | THeroIcons;
 
 export type TIconsSize =
   | null
-  | "sm"
-  | "md"
-  | "lg"
-  | "2x"
-  | "3x"
-  | "4x"
-  | "5x"
-  | "6x"
-  | "7x"
-  | "8x"
-  | "9x"
-  | "10x";
+  | "1"
+  | "2"
+  | "3"
+  | "4"
+  | "5"
+  | "6"
+  | "7"
+  | "8"
+  | "9"
+  | "10"
+  | "11"
+  | "12"
+  | "15"
+  | "20";

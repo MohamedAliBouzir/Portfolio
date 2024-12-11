@@ -28,6 +28,7 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
       className = undefined,
       icon = undefined,
       size = null,
+      iconSize = "5",
       isDisable = false,
       shadow = undefined,
       hoverShadow = null,
@@ -61,19 +62,7 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
     };
     const INNER = (
       <>
-        {icon && (
-          <Icon
-            icon={icon}
-            // className="w-[calc(var(--btn-font-size)*1px)] 
-            //            h-[calc(var(--btn-font-size)*1px)] 
-            //            mt-[-2px] 
-            //            mr-2 
-            //            sm:w-[calc(var(--btn-font-size-sm)*1px)] 
-            //            sm:h-[calc(var(--btn-font-size-sm)*1px)] 
-            //            lg:w-[calc(var(--btn-font-size-lg)*1px)] 
-            //            lg:h-[calc(var(--btn-font-size-lg)*1px)]"
-          />
-        )}
+        {icon && <Icon icon={icon} size={iconSize} />}
         {isVisuallyHidden ? (
           <span className="visually-hidden">Toggle Dropdown</span>
         ) : (
@@ -148,6 +137,19 @@ Button.propTypes = {
   className: PropTypes.string,
   icon: PropTypes.string,
   size: PropTypes.oneOf(["sm", "lg", null]),
+  iconSize: PropTypes.oneOf([
+    null,
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "15",
+    "20",
+  ]),
   isDisable: PropTypes.bool,
   shadow: PropTypes.bool,
   hoverShadow: PropTypes.bool,
