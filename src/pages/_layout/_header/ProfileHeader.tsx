@@ -3,6 +3,7 @@ import Button from "../../../components/tailwind/Button";
 import Header from "../../../components/layout/Header/Header";
 import { PortfolioHome } from "../../../menu";
 import useDarkMode from "../../../hooks/useDarkMode";
+import Icon from "../../../components/icon/Icon";
 
 
 const ProfileHeader = () => {
@@ -11,7 +12,7 @@ const ProfileHeader = () => {
     <Header>
       <div className="flex flex-row items-center justify-between w-full mx-2">
         {/* First child: flex-1 */}
-        <div className="flex-1 text-left">Web Site Logo</div>
+        <div className="flex-1 text-left"><Icon icon="logo" /></div>
 
         {/* Second child: flex-1 */}
         <div className="flex-1 flex justify-center gap-1">
