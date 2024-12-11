@@ -3,4 +3,6 @@ export type TSvgIcons =
   | "CustomFacebook"
   | "CustomLinkedIn"
   | "CustomGithub"
-  | "CustomGitlab";
+  | "CustomGitlab"
+  | "Logo"
+  | "Error";

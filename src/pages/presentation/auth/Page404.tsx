@@ -1,15 +1,15 @@
-import { useMeasure } from "react-use";
-import Page from "../../../components/layout/Page"
-import PageWrapper from "../../../components/layout/PageWrapper"
-import { authPagesMenu } from "../../../menu";
+import Icon from "../../../components/icon/Icon";
+import Page from "../../../components/layout/Page";
+import PageWrapper from "../../../components/layout/PageWrapper";
 
-const [ref] = useMeasure<HTMLDivElement>();
 const Page404 = () => {
-    return(
-        <PageWrapper ref={ref} title={authPagesMenu.page404.text}>
-        <Page>404 Not found</Page>
-      </PageWrapper>
-    )
-}
+  return (
+    <PageWrapper>
+      <Page>
+        <Icon icon="Error" className="max-h-500 max-w-500"/>
+      </Page>
+    </PageWrapper>
+  );
+};
 
-export default Page404
+export default Page404;
