@@ -1,9 +1,9 @@
 import { FC } from "react";
-import { IWrapperContainerProps } from "./../../interfaces/layout/wrapper-interface";
+import { IWrapperContainerProps } from "../../../interfaces/layout/wrapper-interface";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import { wrapper } from "./../../styles/components/layout/_wrapper";
-import Content from "./../Content/Content";
+import { wrapper } from "../../../styles/components/layout/_wrapper";
+import Content from "../Content/Content";
 import HeaderRoutes from "../Header/HeaderRoutes";
 
 export const WrapperContainer: FC<IWrapperContainerProps> = ({

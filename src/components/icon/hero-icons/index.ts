@@ -1,2 +1,2 @@
-export {default as SvgSun} from './Sun';
-export {default as SvgMoon} from './Moon';
+export { default as Sun } from './Sun';
+export { default as Moon } from './Moon';

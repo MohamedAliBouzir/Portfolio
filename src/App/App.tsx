@@ -6,7 +6,7 @@ import {
   flexCenter,
   gradientCircle,
 } from "./../styles/index";
-import Wrapper from "../layout/Wrapper/Wrapper";
+import Wrapper from "../components/layout/Wrapper/Wrapper";
 import classNames from "classnames";
 
 const App = () => {

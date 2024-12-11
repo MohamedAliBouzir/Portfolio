@@ -1,8 +1,8 @@
 import { useMeasure } from "react-use";
 // import Button from "../../components/tailwind/Button";
 // import useDarkMode from "../../hooks/useDarkMode";
-import Page from "../../layout/Page";
-import PageWrapper from "../../layout/PageWrapper";
+import Page from "../../components/layout/Page";
+import PageWrapper from "../../components/layout/PageWrapper";
 import { PortfolioHome } from "../../menu";
 
 const Projects = () => {

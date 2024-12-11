@@ -1,6 +1,6 @@
 import { FC } from "react";
 import PropTypes from "prop-types";
-import { IHeaderProps } from "../../interfaces/layout/header-interface";
+import { IHeaderProps } from "../../../interfaces/layout/header-interface";
 import classNames from "classnames";
 import { useMeasure } from "react-use";
 

@@ -1,8 +1,8 @@
 import { forwardRef, useLayoutEffect } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { containerFluid, pageWrapperLayout } from "../../styles/components/layout/_pageWrapper";
-import { IPageWrapperProps } from "../../interfaces/layout/pageWrapper-interface";
+import { containerFluid, pageWrapperLayout } from "../../../styles/components/layout/_pageWrapper";
+import { IPageWrapperProps } from "../../../interfaces/layout/pageWrapper-interface";
 
 const PageWrapper = forwardRef<HTMLDivElement, IPageWrapperProps>(
   (

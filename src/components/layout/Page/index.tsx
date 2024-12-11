@@ -1,8 +1,8 @@
 import { forwardRef } from "react";
 import PropTypes from "prop-types";
-import { IPageProps } from "../../interfaces/layout/page-interface";
+import { IPageProps } from "../../../interfaces/layout/page-interface";
 import classNames from "classnames";
-import { pageLayout } from "../../styles/components/layout/_page";
+import { pageLayout } from "../../../styles/components/layout/_page";
 
 const Page = forwardRef<HTMLDivElement, IPageProps>(
   ({ children, className = undefined, container="2xl", ...props }, ref) => {

@@ -1,31 +1,28 @@
 import { forwardRef, memo } from "react";
-import {
-  IIconProps,
-  IRefWrapperProps,
-} from "../../interfaces/components/icon-interface";
-import pascalcase from "pascalcase";
 import * as SvgIcon from "./svg-icons";
 import * as Hero from "./hero-icons";
 import classNames from "classnames";
 import PropTypes from "prop-types";
+import pascalcase from "pascalcase";
+import {
+  IIconProps,
+  IRefWrapperProps,
+} from "../../interfaces/components/icon-interface";
 
 const SvgIcons: Record<string, React.FC<any>> = SvgIcon;
 const HeroIcons: Record<string, React.FC<any>> = Hero;
 
 const RefWrapper = forwardRef<HTMLSpanElement, IRefWrapperProps>(
   ({ children }, ref) => {
-    if (ref) {
-      return (
-        <span ref={ref} data-only-ref="true">
-          {children}
-        </span>
-      );
-    }
-    return children;
+    return ref ? (
+      <span ref={ref} data-only-ref="true">
+        {children}
+      </span>
+    ) : (
+      children
+    );
   }
 );
-
-RefWrapper.displayName = "RefWrapper";
 
 const Icon = forwardRef<HTMLSpanElement, IIconProps>(
   (
@@ -39,20 +36,23 @@ const Icon = forwardRef<HTMLSpanElement, IIconProps>(
     },
     ref
   ) => {
-    const IconName = pascalcase(icon);
+    const IconName = pascalcase(icon); // Converts the icon name to PascalCase
+    console.log("Looking for icon:", IconName); // Log the name we are looking for
+
     const SvgIconWrapper = SvgIcons[IconName];
     const HeroWrapper = HeroIcons[IconName];
 
-    // Construct Tailwind-based classNames
     const iconClassName = classNames(
-      "inline-block", // Ensure the icon is inline (important for spacing in text)
-      {
-        [`text-${color}`]: color, // Dynamic text color based on 'color' prop
-        [`w-${size}`]: size, // Dynamic width based on 'size' prop
-        [`h-${size}`]: size, // Dynamic height based on 'size' prop
-      },
-      className // Append any additional className from props
+      "inline-block",
+      `w-${size ? size : 6}`,
+      `h-${size ? size : 6}`,
+      `text-white`,
+      className
     );
+
+    if (!SvgIconWrapper && !HeroWrapper) {
+      console.warn(`Icon "${IconName}" not found!`); // Log if the icon is not found
+    }
 
     const isForceCustom = forceFamily === "custom";
     const isForceHero = forceFamily === "hero";
@@ -76,7 +76,7 @@ const Icon = forwardRef<HTMLSpanElement, IIconProps>(
       return (
         <RefWrapper ref={ref}>
           <HeroWrapper
-            data-name={`hero--${icon}`}
+            data-name={`hero--${IconName}`}
             className={classNames("svg-icon--hero", iconClassName)}
             {...props}
           />
@@ -88,6 +88,7 @@ const Icon = forwardRef<HTMLSpanElement, IIconProps>(
   }
 );
 
+Icon.displayName = "Icon";
 Icon.propTypes = {
   icon: PropTypes.string.isRequired,
   className: PropTypes.string,
@@ -117,7 +118,5 @@ Icon.propTypes = {
   ]),
   forceFamily: PropTypes.oneOf([null, "custom", "hero"]),
 };
-
-Icon.displayName = "Icon";
 
 export default memo(Icon);

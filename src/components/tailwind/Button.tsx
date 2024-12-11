@@ -64,14 +64,14 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
         {icon && (
           <Icon
             icon={icon}
-            className="w-[calc(var(--btn-font-size)*1px)] 
-                       h-[calc(var(--btn-font-size)*1px)] 
-                       mt-[-2px] 
-                       mr-2 
-                       sm:w-[calc(var(--btn-font-size-sm)*1px)] 
-                       sm:h-[calc(var(--btn-font-size-sm)*1px)] 
-                       lg:w-[calc(var(--btn-font-size-lg)*1px)] 
-                       lg:h-[calc(var(--btn-font-size-lg)*1px)]"
+            // className="w-[calc(var(--btn-font-size)*1px)] 
+            //            h-[calc(var(--btn-font-size)*1px)] 
+            //            mt-[-2px] 
+            //            mr-2 
+            //            sm:w-[calc(var(--btn-font-size-sm)*1px)] 
+            //            sm:h-[calc(var(--btn-font-size-sm)*1px)] 
+            //            lg:w-[calc(var(--btn-font-size-lg)*1px)] 
+            //            lg:h-[calc(var(--btn-font-size-lg)*1px)]"
           />
         )}
         {isVisuallyHidden ? (
