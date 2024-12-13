@@ -48,8 +48,8 @@ const Icon = forwardRef<HTMLSpanElement, IIconProps>(
       "inline-block",
       `w-${size}`,
       `h-${size}`,
-      `${icon === "Moon" && "text-secondary"}`,
-      `${icon === "Sun" && `text-warning`}`,
+      `${icon === "Moon" && "text-moon"}`,
+      `${icon === "Sun" && `text-sun`}`,
       className
     );
 

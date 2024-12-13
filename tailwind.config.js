@@ -6,6 +6,8 @@ export default {
       colors: {
         "primal": "#CB9DF0",
         "light-green": "#38b2ac",
+        "sun": "#FFD700",
+        "moon": "#FFC300"
       },
       backgroundImage: {
         "gradient-primal":
