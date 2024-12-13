@@ -4,14 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#3490dc",
+        "primal": "#CB9DF0",
         "light-green": "#38b2ac",
-        secondary: "#f6ad55",
-        tertiary: "#fbbf24",
       },
       backgroundImage: {
-        "gradient-primary":
-          "linear-gradient(45deg, var(--color-primary), var(--color-light-green))",
+        "gradient-primal":
+          "linear-gradient(45deg, var(--color-primal), var(--color-light-green))",
         "gradient-secondary":
           "linear-gradient(45deg, var(--color-secondary), var(--color-tertiary))",
       },

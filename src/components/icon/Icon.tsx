@@ -92,7 +92,7 @@ Icon.propTypes = {
   className: PropTypes.string,
   color: PropTypes.oneOf([
     null,
-    "primary",
+    "primal",
     "secondary",
     "success",
     "info",

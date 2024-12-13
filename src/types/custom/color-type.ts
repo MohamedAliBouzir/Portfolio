@@ -1,5 +1,5 @@
 export type TColor =
-  | "primary"
+  | "primal"
   | "secondary"
   | "success"
   | "info"

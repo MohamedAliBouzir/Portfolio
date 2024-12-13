@@ -5,8 +5,7 @@ import TagWrapper from "../TagWrapper";
 import PropTypes from "prop-types";
 import {
   btn,
-  focusDesign,
-  hoverDesign,
+  btnColorDesign,
   hovershadowDesign,
   shadowDesign,
 } from "../../styles/custom/_button";
@@ -21,7 +20,7 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
       type = "button",
       to = undefined,
       href = undefined,
-      color = undefined,
+      color = "primal",
       isLight = false,
       isLink = false,
       isActive = false,
@@ -42,16 +41,10 @@ const Button = forwardRef<HTMLAnchorElement, IButtonProps>(
     const BTN_CLASS = classNames(
       btn,
       className,
-      typeof color === "string" &&
-        (isLink
-          ? `text-${color} hover:text-${color}-600 active:text-${color}-700`
-          : `${hoverDesign(color, isLight, isActive)} ${focusDesign(color)}`),
-      shadow &&
-        typeof color === "string" &&
-        !isLink &&
-        `${shadowDesign(color)}`,
-      typeof rounded !== "string" ? "rounded" : `rounded-${rounded}`,
-      hoverShadow && typeof color === "string" && hovershadowDesign(color),
+      !isLink && `${btnColorDesign(color, isLight, isActive)}`,
+      !isLink && shadow && `${shadowDesign(color)}`,
+      !isLink && hoverShadow && `${hovershadowDesign(color)}`,
+      typeof rounded === "string" && `rounded-${rounded}`,
       isDisable && "cursor-not-allowed"
     );
 
@@ -124,7 +117,7 @@ Button.propTypes = {
   href: PropTypes.string,
   color: PropTypes.oneOf([
     null,
-    "primary",
+    "primal",
     "secondary",
     "success",
     "info",
@@ -158,7 +151,7 @@ Button.propTypes = {
     PropTypes.string,
   ]),
   isVisuallyHidden: PropTypes.bool,
-  rounded: PropTypes.oneOf(["default", "sm", "lg", "full"]),
+  rounded: PropTypes.oneOf(["default", "lg", "2xl", "full"]),
 };
 
 export default Button;
