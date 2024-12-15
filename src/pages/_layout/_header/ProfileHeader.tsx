@@ -7,22 +7,23 @@ import Icon from "../../../components/icon/Icon";
 
 const ProfileHeader = () => {
   const { setDarkModeStatus, darkModeStatus } = useDarkMode();
+  
   return (
     <Header>
-      <div className="flex flex-row items-center justify-around w-full mx-2">
-        <div>
+      <div className="flex flex-row items-center justify-between sm:justify-around w-full mx-2">
+        <div id="logo" className="Logo" rel="Logo">
           <NavLink id="Home" to="/" className="flex items-center">
             <Icon icon="logo" size="12" />
           </NavLink>
         </div>
-        <div className="flex justify-center gap-5">
+        <div id="routes" className="hidden sm:flex justify-center gap-5" rel="Routes">
           {Object.values(PortfolioHome).map((value) => (
             <Button tag="a" to={`${value.path}`} isLink color="secondary">
               {value.text}
             </Button>
           ))}
         </div>
-        <div className="flex  space-x-2">
+        <div id="dark-mode-button" className="hidden sm:flex space-x-2" rel="Dark mode">
           <Button
             type="button"
             isLink
@@ -30,6 +31,9 @@ const ProfileHeader = () => {
             icon={!darkModeStatus ? "Moon" : "Sun"}
             onClick={() => setDarkModeStatus((prev) => !prev)}
           />
+        </div>
+        <div id="mobile-menu" className="block sm:hidden" rel="Mobile menu">
+          <Icon icon="Menu" />
         </div>
       </div>
     </Header>
