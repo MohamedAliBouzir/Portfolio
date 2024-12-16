@@ -1,5 +1,4 @@
 import { useMeasure } from "react-use";
-// import Button from "../../components/tailwind/Button";
 // import useDarkMode from "../../hooks/useDarkMode";
 import Page from "../../components/layout/Page/Page";
 import PageWrapper from "../../components/layout/PageWrapper/PageWrapper";
