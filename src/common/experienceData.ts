@@ -1,4 +1,4 @@
-export const experiencesDetails = [
+export const experiencesDetails: Object[] = [
   {
     id: 1,
     role: "Software Automation Quality Assurance Engineer",

@@ -1,83 +1,165 @@
-export const projectsData = [
-    {
-        id: 1,
-        projectName: "NOE",
-        projectDescription: [
-            "📌Developed a Selenium-based script to automate testing of a platform with over 2000 pages, including testing all buttons, fields, pages, and filters automatically. 🤖",
-            "📌Implemented automated bug reporting, including code status, location (capturing the error XPath in HTML5), and preparing comprehensive reports. 🐞📋",
-            "📌Automated testing for page opening errors, non-functional filters, incorrect results, status code errors, redirections, and wrong paths. 🛠️",
-            "📌Optimized the script's performance by implementing multithreading to reduce rest time between different tests on each page, reducing the testing time from 30 hours to 19 hours. ⏱️",
-            "📌Further optimized testing efficiency by implementing multiprocessing to process multiple pages simultaneously, completing all tests in just 25 minutes. 🚀",
-            "📌Added a cron job to start the automated tests automatically twice a day, at 7 am and 6 pm. 🔄"
-        ],
-        highlights: "",
-        appliedSkills: [""]
-    },
-    {
-        id: 2,
-        projectName: "Store2000",
-        projectDescription: [
-            "📌Utilized Ionic v6, Capacitor v4.0.1, React v17.0.1, TypeScript, Odoo v14, OpenAPI v3.0 and Python, to develop a user-friendly mobile app serving as a mini ERP for the technical team at Store 2000. 📱💻",
-            "📌Designed a menu allowing immediate quotation creation for clients, assisting in creating window blinds using available detached pieces, and updating technical staff calendars. 📆",
-            "📌Implemented real-time task management for technical staff, including tracking active, completed, and in-progress tasks. 🔄",
-            "📌Integrated the app with the administration ERP (Odoo) to ensure seamless data synchronization and management. 🔄",
-            "📌Developed a client data page containing contact information, requests, and necessary work details for client houses. 🏠",
-            "📌Implemented a billing system for clients to sign off on quotations, with all data and signatures automatically generating invoices in PDF format for Odoo. 📝🧾"
-        ],
-        highlights: "",
-        appliedSkills: [""]
-    },
-    {
-        id: 3,
-        projectName: "Carthage BET",
-        projectDescription: [
-            "",
-        ],
-        highlights: "",
-        appliedSkills: [""]
-    },
-    {
-        id: 4,
-        projectName: "Elissa BET",
-        projectDescription: [
-            "",
-        ],
-        highlights: "",
-        appliedSkills: [""]
-    },
-    {
-        id: 5,
-        projectName: "DataMigrationMorpher",
-        projectDescription: [
-            "📌Automated Migration: DataMigrationMorpher automates the entire data migration process, eliminating the need for manual intervention. This ensures faster migration times and reduces the risk of human error.⚙️🕒",
-            "📌Compatibility: The tool is compatible with a wide range OSs This flexibility allows users to migrate data between different platforms with ease. 💻🔄",
-            "📌Data Transformation: D2M includes powerful data transformation capabilities, allowing users to manipulate and transform data during the migration process. This ensures that data is formatted correctly for the destination system. 🛠️🔄",
-            "📌Scalability: Whether migrating a small dataset or a large-scale enterprise migration, D2M is designed to scale according to the user's needs. Its robust architecture ensures that it can handle even the most complex tasks. 🚀📈",
-            "📌Real-time Monitoring: The tool provides real-time monitoring of the migration process, allowing users to track progress and identify any issues that may arise. This ensures that migrations are completed successfully and on time. 📊👀",
-            "📌Reporting: Upon completion of a migration, D2M generates detailed reports that provide insights into the migration process. This includes information on the number of records migrated, any errors encountered, and the overall success rate of the migration. 📝📊",
-            "📌Conceptualized and developed D2M from inception to deployment, incorporating custom data mappings, transformation rules, and error handling mechanisms.",
-            "📌Implemented a robust and scalable architecture for D2M, ensuring optimal performance and flexibility for users.",
-            "📌Provided technical guidance and support to stakeholders, demonstrating a deep understanding of data migration best practices."
-        ],
-        highlights: "",
-        appliedSkills: [""]
-    },
-    {
-        id: 6,
-        projectName: "Sultan",
-        projectDescription: [
-            "",
-        ],
-        highlights: "",
-        appliedSkills: [""]
-    },
-    {
-        id: 7,
-        projectName: "Aladin",
-        projectDescription: [
-            "",
-        ],
-        highlights: "",
-        appliedSkills: [""]
-    },
-]
+export const projectsData: Object[] = [
+  {
+    id: 1,
+    projectName: "NOE",
+    projectDescription: [
+      "📌Developed a Selenium-based script to automate testing of a platform with over 2000 pages, including testing all buttons, fields, pages, and filters automatically.",
+      "📌Implemented automated bug reporting, including code status, location (capturing the error XPath in HTML5), and preparing comprehensive reports.",
+      "📌Automated testing for page opening errors, non-functional filters, incorrect results, status code errors, redirections, and wrong paths.",
+      "📌Optimized the script's performance by implementing multithreading to reduce rest time between different tests on each page, reducing the testing time from 30 hours to 19 hours.",
+      "📌Further optimized testing efficiency by implementing multiprocessing to process multiple pages simultaneously, completing all tests in just 25 minutes.",
+      "📌Added a cron job to start the automated tests automatically twice a day, at 7 am and 6 pm.",
+    ],
+    highlights: "",
+    appliedSkills: [
+      "HTML",
+      "SVN",
+      "MariaDB",
+      "Python",
+      "Selenium",
+      "web-drivers",
+    ],
+    attached: null,
+  },
+  {
+    id: 2,
+    projectName: "Store2000",
+    projectDescription: [
+      "📌Utilized Ionic v6, Capacitor v4.0.1, React v17.0.1, TypeScript, Odoo v14, OpenAPI v3.0 and Python, to develop a user-friendly mobile app serving as a mini ERP for the technical team at Store 2000.",
+      "📌Designed a menu allowing immediate quotation creation for clients, assisting in creating window blinds using available detached pieces, and updating technical staff calendars.",
+      "📌Implemented real-time task management for technical staff, including tracking active, completed, and in-progress tasks.",
+      "📌Integrated the app with the administration ERP (Odoo) to ensure seamless data synchronization and management.",
+      "📌Developed a client data page containing contact information, requests, and necessary work details for client houses.",
+      "📌Implemented a billing system for clients to sign off on quotations, with all data and signatures automatically generating invoices in PDF format for Odoo.",
+    ],
+    highlights: "",
+    appliedSkills: [
+      "Ionic",
+      "Capacitor",
+      "React",
+      "Typescript",
+      "Odoo - OpenAPI"
+    ],
+    attached: null,
+  },
+  {
+    id: 3,
+    projectName: "Carthage BET",
+    projectDescription: [
+      "📌Developed user-friendly, responsive interfaces using React, Typescript and clean architecture principles.",
+      "📌Implemented SWR to consume various REST APIs provided by the backend team.",
+      "📌Utilized React best practices, including the HOC design pattern, lazy loading, suspense, memos and callbacks to enhance performance and user experience",
+      "📌Resolved performance issues through profiling and optimization techniques to improve the overall speed and responsiveness of the application",
+      "📌Developed reusable custom hooks to manage form validation, API calls and local storage operations, improving code modularity and reducing redundancy across the application.",
+    ],
+    highlights: "",
+    appliedSkills: [
+        "React",
+        "TypeScript",
+        "SWR",
+        "Socket.io",
+        "Lodash"
+    ],
+    attached: null,
+  },
+  {
+    id: 4,
+    projectName: "Elissa BET",
+    projectDescription: [
+      "📌Designed and implemented authentication interfaces, betting nterfaces, general interfaces, sign-up interfaces, real-time casinos, real-time invoices and real-time match tracking and results interfaces.",
+      "📌Built custom hooks for complex state management logic such as user authentication and theme switching, ensure better separation of concerns and a cleaner codebase.",
+      "📌Optimized state management with React Context and custom hooks for consistent access to global data (e.g, user profile information) across various components without excessive re-renders.",
+      "📌Improved app performance by minimizing unnecessary re-renders with  efficient context usage and memorization in custom hooks, resulting in a 25% reduction in load times.",
+      "📌Migrated application from REST API consumption using Axios to GraphQL schema with Apollo Client.",
+    ],
+    highlights: "",
+    appliedSkills: [
+        "React",
+        "TypeScript",
+        "Appolo Client",
+        "Socket.io",
+        "Lodash"
+    ],
+    attached: null,
+  },
+  {
+    id: 5,
+    projectName: "IEEE ISSATSo Student Branch",
+    projectDescription: [""],
+    highlights: "",
+    appliedSkills: [""],
+    attached: null,
+  },
+  {
+    id: 6,
+    projectName: "DataMigrationMorpher",
+    projectDescription: [
+      "📌Automated Migration: DataMigrationMorpher automates the entire data migration process, eliminating the need for manual intervention. This ensures faster migration times and reduces the risk of human error.",
+      "📌Compatibility: The tool is compatible with a wide range OSs This flexibility allows users to migrate data between different platforms with ease.",
+      "📌Data Transformation: D2M includes powerful data transformation capabilities, allowing users to manipulate and transform data during the migration process. This ensures that data is formatted correctly for the destination system.",
+      "📌Scalability: Whether migrating a small dataset or a large-scale enterprise migration, D2M is designed to scale according to the user's needs. Its robust architecture ensures that it can handle even the most complex tasks.",
+      "📌Real-time Monitoring: The tool provides real-time monitoring of the migration process, allowing users to track progress and identify any issues that may arise. This ensures that migrations are completed successfully and on time.",
+      "📌Reporting: Upon completion of a migration, D2M generates detailed reports that provide insights into the migration process. This includes information on the number of records migrated, any errors encountered, and the overall success rate of the migration.",
+      "📌Conceptualized and developed D2M from inception to deployment, incorporating custom data mappings, transformation rules, and error handling mechanisms.",
+      "📌Implemented a robust and scalable architecture for D2M, ensuring optimal performance and flexibility for users.",
+      "📌Provided technical guidance and support to stakeholders, demonstrating a deep understanding of data migration best practices.",
+    ],
+    highlights: "",
+    appliedSkills: [
+        "React",
+        "TypeScript",
+        "Lodash",
+        "Socket.io",
+        "Python",
+        "Pandas",
+        "Pydash"
+    ],
+    attached: null,
+  },
+  {
+    id: 7,
+    projectName: "Sultan",
+    projectDescription: [
+      "📌Implemented Google translate API for automatic language translation, enhancing accessibility for international users.",
+      "📌Developed custom components and responsive user interfaces using React, Typescript and Redux.",
+      "📌Developed high-performance components following best practices to ensure maintainability, scalability and responsiveness, in close collaboration with the design team.",
+      "📌Identified and resolved bugs to ensure application stability and a smooth user experience.",
+      "📌Implemented SEO using React Helmet in collaboration with the marketing team to improve visibility and search rankings.",
+    ],
+    highlights: "",
+    appliedSkills: [
+        "React",
+        "TypeScript",
+        "Axios",
+        "Socket.io",
+        "Nodejs",
+        "Expressjs",
+        "PostgreSQL",
+        "JavaScript",
+    ],
+    attached: null,
+  },
+  {
+    id: 8,
+    projectName: "Aladin",
+    projectDescription: [
+      "📌Designed new PostgreSQL models to optimize the database structure and improve data handling efficiency",
+      "📌Built high-performance APIs that handle storage efficiently and are resistant to spam and malicious traffic.",
+      "📌Developed a new admin role with custom interfaces to provide granular access control and improve administrative workflows",
+      "📌Resolved performance issues through profiling and optimization techniques to improve the overall speed and responsiveness of the application.",
+      "📌Developed custom components and user interfaces using React, Typescript and Redux, ensuring responsiveness, scalability and maintainability.",
+      "📌Designed and developed custom skeletons and layouts for each landing page to enhance the user experience and page load performance.",
+    ],
+    highlights: "",
+    appliedSkills: [
+        "React",
+        "TypeScript",
+        "Axios",
+        "Socket.io",
+        "Nodejs",
+        "Expressjs",
+        "PostgreSQL",
+    ],
+    attached: null,
+  },
+];
