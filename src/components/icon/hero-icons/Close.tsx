@@ -1,6 +1,6 @@
 import { SVGProps } from "react";
 
-const SvgMoon = (props: SVGProps<SVGSVGElement>) => {
+const SvgClose = (props: SVGProps<SVGSVGElement>) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -14,10 +14,10 @@ const SvgMoon = (props: SVGProps<SVGSVGElement>) => {
       <path
         strokeLinecap="round"
         strokeLinejoin="round"
-        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+        d="M6 18 18 6M6 6l12 12"
       />
     </svg>
   );
 };
 
-export default SvgMoon;
+export default SvgClose;

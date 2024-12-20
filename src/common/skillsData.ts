@@ -66,7 +66,12 @@ export const skillsData: Object[] = [
   },
   {
     id: 14,
-    name: "Tailwind Css",
-    logo: "tailwindcss",
+    name: "HTML",
+    logo: "html",
+  },
+  {
+    id: 15,
+    name: "CSS",
+    logo: "css",
   },
 ];

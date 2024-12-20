@@ -4,10 +4,14 @@ import Header from "../../../components/layout/Header/Header";
 import { PortfolioHome } from "../../../menu";
 import useDarkMode from "../../../hooks/useDarkMode";
 import Icon from "../../../components/icon/Icon";
+import { useEffect, useState } from "react";
 
 const ProfileHeader = () => {
   const { setDarkModeStatus, darkModeStatus } = useDarkMode();
-  
+  const [openSideMenu, setOpenSideMenu] = useState<boolean>(false);
+  useEffect(() => {
+    setOpenSideMenu(false);
+  }, [])
   return (
     <Header>
       <div className="flex flex-row items-center justify-between sm:justify-around w-full mx-2">
@@ -16,14 +20,22 @@ const ProfileHeader = () => {
             <Icon icon="logo" size="12" />
           </NavLink>
         </div>
-        <div id="routes" className="hidden sm:flex justify-center gap-5" rel="Routes">
+        <div
+          id="routes"
+          className="hidden sm:flex justify-center gap-5"
+          rel="Routes"
+        >
           {Object.values(PortfolioHome).map((value) => (
             <Button tag="a" to={`${value.path}`} isLink color="secondary">
               {value.text}
             </Button>
           ))}
         </div>
-        <div id="dark-mode-button" className="hidden sm:flex space-x-2" rel="Dark mode">
+        <div
+          id="dark-mode-button"
+          className="hidden sm:flex space-x-2"
+          rel="Dark mode"
+        >
           <Button
             type="button"
             isLink
@@ -33,7 +45,13 @@ const ProfileHeader = () => {
           />
         </div>
         <div id="mobile-menu" className="block sm:hidden" rel="Mobile menu">
-          <Icon icon="Menu" />
+          <Button
+            type="button"
+            isLink
+            color="primal"
+            icon={openSideMenu ? "Close" : "Menu"}
+            onClick={() => setOpenSideMenu(!openSideMenu)}
+          />
         </div>
       </div>
     </Header>
