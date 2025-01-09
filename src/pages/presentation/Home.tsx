@@ -11,6 +11,7 @@ const Home = () => {
     <PageWrapper ref={ref} title={PortfolioHome.welcomePage.text}>
       <Page className="w-full h-full bg-black">
         <div id="welcome page header container">
+        {/* add image background none scrollable with the page (when scroll down it does scroll down too) */}
           <div id="image in cercle"></div>
           <div id="description profile part">
             <div id="position full js"></div>
