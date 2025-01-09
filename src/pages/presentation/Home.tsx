@@ -9,7 +9,26 @@ const Home = () => {
   const [ref] = useMeasure<HTMLDivElement>();
   return (
     <PageWrapper ref={ref} title={PortfolioHome.welcomePage.text}>
-      <Page>Welcome page</Page>
+      <Page className="w-full h-full bg-black">
+        <div id="welcome page header container">
+          <div id="image in cercle"></div>
+          <div id="description profile part">
+            <div id="position full js"></div>
+            <div id="name typed"></div>
+            <div id="titre software engineer"></div>
+            <div id="short description "></div>
+            <div id="media links"></div>
+            <div id="short word"></div>
+          </div>
+        </div>
+        <div id="current position">
+          <div id="society logo"></div>
+          <div id="society name"></div>
+          <div id="position in society"></div>
+          <div id="finished projects in society"></div>
+          <div id="finished tasks in society"></div>
+        </div>
+      </Page>
     </PageWrapper>
   );
 };
