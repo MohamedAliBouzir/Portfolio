@@ -5,7 +5,8 @@ import { PortfolioHome } from "../../../menu";
 import useDarkMode from "../../../hooks/useDarkMode";
 import Icon from "../../../components/icon/Icon";
 import { useState } from "react";
-import { Transition } from '@headlessui/react';
+import { Transition } from "@headlessui/react";
+import { clsx } from "clsx";
 
 const ProfileHeader = () => {
   const { setDarkModeStatus, darkModeStatus } = useDarkMode();
@@ -25,7 +26,13 @@ const ProfileHeader = () => {
           rel="Routes"
         >
           {Object.values(PortfolioHome).map((value) => (
-            <Button key={value.text} tag="a" to={`${value.path}`} isLink color="secondary">
+            <Button
+              key={value.text}
+              tag="a"
+              to={`${value.path}`}
+              isLink
+              color="secondary"
+            >
               {value.text}
             </Button>
           ))}
@@ -58,12 +65,16 @@ const ProfileHeader = () => {
           enter="transition-transform duration-300 ease-in-out"
           enterFrom="-translate-x-full opacity-0"
           enterTo="translate-x-0 opacity-100"
-          leave="transition-transform duration-300 ease-in-out"
-          leaveFrom="translate-x-0 opacity-100"
-          leaveTo="-translate-x-full opacity-0"
         >
-          <div className="absolute top-full left-0 w-3/4 h-screen bg-gray-800 text-white z-50 p-4">
-            <div className="flex flex-col gap-4">
+          <div
+            className={clsx(
+              darkModeStatus ? "bg-gray-800 text-white transition-colors duration-500 ease-in-out" : "bg-slate-50 text-black transition-colors duration-200 ease-in-out",
+              "absolute top-full left-0 w-3/4 h-screen z-50 p-4",
+              "data-[leave]:duration-300 data-[leave]:ease-in-out",
+              "data-[leave]:data-[closed]:-translate-x-full data-[leave]:data-[closed]:rotate-[0deg]"
+            )}
+          >
+            <div className="flex flex-col gap-4 items-start">
               {Object.values(PortfolioHome).map((value) => (
                 <NavLink
                   key={value.text}
@@ -81,7 +92,7 @@ const ProfileHeader = () => {
                 icon={!darkModeStatus ? "Moon" : "Sun"}
                 onClick={() => {
                   setDarkModeStatus((prev) => !prev);
-                  setOpenSideMenu(false);
+                  // setOpenSideMenu(false);
                 }}
               />
             </div>

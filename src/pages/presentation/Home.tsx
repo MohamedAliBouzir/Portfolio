@@ -9,8 +9,7 @@ const Home = () => {
   const [ref] = useMeasure<HTMLDivElement>();
   return (
     <PageWrapper ref={ref} title={PortfolioHome.welcomePage.text}>
-      <Page className="w-full h-full bg-gray">
-        <div>
+      <Page className="w-full h-full bg-slate-700">
           <div id="welcome page header container">
             {/* add image background none scrollable with the page (when scroll down it does scroll down too) */}
             <div id="image in cercle">img</div>
@@ -55,7 +54,6 @@ const Home = () => {
             <div id="Professional Projects">15</div>
             <div id="Clients finished Projects">14</div>
           </div>
-        </div>
       </Page>
     </PageWrapper>
   );
