@@ -1,4 +1,7 @@
-export const experiencesDetails: Object[] = [
+export const experiencesDetails: Record<
+  string,
+  string | number | null | string[] | number[]
+>[] = [
   {
     id: 1,
     role: "Software Automation Quality Assurance Engineer",

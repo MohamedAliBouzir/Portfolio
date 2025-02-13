@@ -1,4 +1,7 @@
-export const projectsData: Object[] = [
+export const projectsData: Record<
+string,
+string | number | null | string[] | number[]
+>[] = [
   {
     id: 1,
     projectName: "NOE",

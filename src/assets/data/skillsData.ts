@@ -1,4 +1,7 @@
-export const skillsData: Object[] = [
+export const skillsData: Record<
+string,
+string | number | null | string[] | number[]
+>[] = [
   {
     id: 1,
     name: "JavaScript",

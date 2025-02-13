@@ -1,4 +1,7 @@
-export const volunteeringData: Object[] = [
+export const volunteeringData: Record<
+string,
+string | number | null | string[] | number[]
+>[] = [
   {
     id: 1,
     name: "ATAST Association",
