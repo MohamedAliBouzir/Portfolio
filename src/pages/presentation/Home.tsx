@@ -17,15 +17,41 @@ const Home = () => {
           className="flex items-center justify-center flex-col-reverse md:flex-row w-[80%] mx-auto gap-5"
         >
           {/* add image background none scrollable with the page (when scroll down it does scroll down too) */}
-          <div id="image in cercle" className="basis-1/3">
-            <img src={devPic} />
+          <div
+            id="picture-container"
+            className="basis-1/3 flex items-center justify-center"
+          >
+            <div
+              id="picture-border"
+              className="w-72 h-72 rounded-full border-4 border-purple-400 p-1 overflow-hidden"
+            >
+              <img
+                id="picture-avatar"
+                src={devPic}
+                alt="Personal Image"
+                className="w-full h-full object-cover rounded-full"
+              />
+            </div>
           </div>
+
           <div
             id="description profile part"
             className="basis-1/3 flex flex-col items-center md:items-start gap-5"
           >
-            <div id="greetings-name">
-              <p>Hi there, I'm BOUZIR Mohamed Ali</p>
+            <div
+              id="greetings-name-container"
+              className="flex gap-2 flex-col md:flex-row w-full h-full items-center"
+            >
+              <p id="greetings" className="text-3xl font-bold">
+                Hi There! 👋
+              </p>
+              <p id="personalName" className="flex items-center gap-1">
+                <span className="text-lg font-mono">I'm</span>
+                <div>
+                <span className="text-xl font-bold text-purple-500">&ldquo;</span>
+                <span className="text-lg">BOUZIR Mohamed Ali</span>
+                <span className="text-xl font-bold text-purple-500 relative top-3">&rdquo;</span></div>
+              </p>
             </div>
             <div id="position full js">
               <ReactTyped
@@ -45,8 +71,8 @@ const Home = () => {
               <div id="Github-MohamedAliBouzir"></div>
               {/* https://gitlab.com/MohamedAliBouzir */}
               <div id="GitLab-MohamedAliBouzir"></div>
-              {/* will be updated at home ! */}
-              <div id="Linkedin-MohamedAliBouzir">Mohamed Ali BOUZIR</div>
+              {/* https://www.linkedin.com/in/bouzir-mohamed-ali/ */}
+              <div id="Linkedin-MohamedAliBouzir"></div>
             </div>
             <div id="short word">
               <p>
